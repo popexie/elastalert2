@@ -4,6 +4,68 @@
 - None
 
 ## New features
+- None
+
+## Other changes
+- None
+
+# 2.23.0
+
+## Breaking changes
+- None
+
+## New features
+- [Helm] Add optional liveness and readiness probe - [#1604](https://github.com/jertel/elastalert2/pull/1604) - @aizerin
+- Add `include_rule_params_in_matches` rule parameter to enable copying of specific rule params into match data - [#1605](https://github.com/jertel/elastalert2/pull/1605) - @jertel
+- [Helm] Add `--prometheus_addr` command line parameter to allow binding the Prometheus metrics server on a different host address - [#1608](https://github.com/jertel/elastalert2/pull/1608) - @tgxworld
+
+## Other changes
+- [Docs] Add missing documentation of the `aggregation_alert_time_compared_with_timestamp_field` option. - [#1588](https://github.com/jertel/elastalert2/pull/1588) - @nicolasnovelli
+- Fix linter error reporting about return type assignation in `elastalert/test_rule.py`. - [#1594](https://github.com/jertel/elastalert2/pull/1594) - @thican
+- Add support for Kibana 8.17 for Kibana Discover - [#1597](https://github.com/jertel/elastalert2/pull/1597) - @nsano-rururu
+- Resolve runtime deprecation warnings related to Elastic's 8.16 range filter changes - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Resolve test deprecation warnings related to prettytable enum changes - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency pylint to 3.3.3 (build) - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency pytest to 8.3.4 (build) - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency pytest-cov to 6.0.0 (build) - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency sphinx to 8.1.3 (build)  - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency sphinx_rtd_theme to 3.0.2 (build) - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency tox to 4.23.2 (build) - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency apscheduler to 3.11.0 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency boto3 to 1.35.92 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency cffi to 1.17.1 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency croniter to 6.0.0 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency jinja2 to 3.1.5 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency jira to 3.8.0 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency jsonpointer to 3.0.0 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency jsonschema to 4.23.0 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency prettytable to 3.12.0 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency prometheus-client to 0.21.1 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency pyyaml to 6.0.2 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency requests to 2.32.3 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency stomp.py to 8.2.0 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency tencentcloud-sdk-python to 3.0.1295 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- Upgrade dependency twilio to 9.4.1 - [#1599](https://github.com/jertel/elastalert2/pull/1599) - @jertel
+- [Spike] Fixes spike rule error when no data exists in the current time window - [#1605](https://github.com/jertel/elastalert2/pull/1605) - @jertel
+- [Spike] Fixes spike rule error when no data exists in the reference time window - [#1610](https://github.com/jertel/elastalert2/pull/1610) - @jertel
+
+# 2.22.0
+
+## Breaking changes
+- Note that version 2.21 upgraded Python to 3.13 and unintentionally dropped support for Python 3.12. This release, restores support for Python 3.12, while continuing to use Python 3.13 in the official ElastAlert 2 Docker image. Python 3.12 support will be dropped in a future release. - [#1585](https://github.com/jertel/elastalert2/pull/1585) - @jertel
+
+## New features
+- None
+
+## Other changes
+- None
+
+# 2.21.0
+
+## Breaking changes
+- Be aware that this version dropped support for Python 3.12. It was re-added in the following release due to some distributions not yet supporting Python 3.13.
+
+## New features
 - [Notifications] System error notifications can now be delivered via the same set of alerters as rule alerts - [#1546](https://github.com/jertel/elastalert2/pull/1546) - @jertel
 - [Notifications] New config option `notify_all_errors` supports all system errors, including loss of data connectivity - [#1546](https://github.com/jertel/elastalert2/pull/1546) - @jertel
 
@@ -14,10 +76,10 @@
 - [OpsGenie] Prevent templated `opsgenie_teams` and `opsgenie_recipients` from being overwritten with evaluated values first time an alert is sent. [#1540](https://github.com/jertel/elastalert2/issues/1540) [#1539](https://github.com/jertel/elastalert2/pull/1539) - @lstyles
 - [OpsGenie] Updated configuration schema with missing OpsGenie alerter properties. [#1543](https://github.com/jertel/elastalert2/pull/1543) - @lstyles
 - [Docs] Add missing documentation of the timestamp_field option - [#1544](https://github.com/jertel/elastalert2/pull/1544) - @apollolv
-- Add support for Kibana 8.14/8.15 for Kibana Discover - [#1547](https://github.com/jertel/elastalert2/pull/1547) - @nsano-rururu
+- Add support for Kibana 8.14/8.15/8.16 for Kibana Discover - [#1547](https://github.com/jertel/elastalert2/pull/1547),[#1582](https://github.com/jertel/elastalert2/pull/1582) - @nsano-rururu, @jertel
 - Upgrade pylint 3.1.0 to 3.3.1, pytest 8.0.2 to 8.3.3, pytest-cov 4.1.0 to 5.0.0, pytest-xdist 3.5.0 to 3.6.1, sphinx 7.2.6 to 8.0.2, sphinx_rtd_theme 2.0.0 to 3.0.1, tox 4.13.0 to 4.21.2  - [#1550](https://github.com/jertel/elastalert2/pull/1550) - @nsano-rururu
 - Upgrade to Python 3.13 - [#1551](https://github.com/jertel/elastalert2/pull/1551) - @nsano-rururu
-- Add WRITEBACK_INDEX environment variable - [#1620](https://github.com/jertel/elastalert2/issues/1620) - @popexie
+- [OpsGenie] Support dynamic `opsgenie_addr` values - [#1563](https://github.com/jertel/elastalert2/pull/1563) - @mohamedelema17
 
 # 2.20.0
 

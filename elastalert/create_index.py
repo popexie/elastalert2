@@ -135,7 +135,7 @@ def main():
     parser.add_argument('--verify-certs', action='store_true', default=None, help='Verify TLS certificates')
     parser.add_argument('--no-verify-certs', dest='verify_certs', action='store_false',
                         help='Do not verify TLS certificates')
-    parser.add_argument('--index', help='Index name to create')
+    parser.add_argument('--index', default=os.environ.get('WRITEBACK_INDEX', None), help='Index name to create')
     parser.add_argument('--old-index', help='Old index name to copy')
     parser.add_argument('--send_get_body_as', default='GET',
                         help='Method for querying Elasticsearch - POST, GET or source')

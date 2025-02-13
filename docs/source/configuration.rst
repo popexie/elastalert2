@@ -66,6 +66,7 @@ configuration.
 ``misfire_grace_time``: If the rule scheduler is running behind, due to large numbers of rules or long-running rules, this grace time settings allows a rule to still be executed, provided its next scheduled runt time is no more than this grace period, in seconds, overdue. The default is 5 seconds.
 
 ``writeback_index``: The index on ``es_host`` to use.
+The environment variable ``WRITEBACK_INDEX`` will override this field.
 
 ``max_query_size``: The maximum number of documents that will be downloaded from Elasticsearch in a single query. The
 default is 10,000, and if you expect to get near this number, consider using ``use_count_query`` for the rule. If this
